@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        No way!!1!
+    </title>
+    <style>
+        #slideholder {
+            height: 200px;
+            width: 200px;
+            border: 3px black solid;
+            border-radius: 50px;
+        
+        }
+    </style>
+</head>
+
+<body>
+    <div align="center">
+        
+        <div id="slideholder"></div>
+    </div>  
+
+    <script>
+    var plaatjes = [1, 2, ,3 ,4 ,5 ,6 ,7 ,8 ,9 ];
+    var slideholder = document.getElementById("slideholder");
+    slideholder.style.backgroundImage = "url('img/img1.jpg')";
+
+        slideholder.addEventListener("click", function() {
+        slideholder.style.backgroundImage = "url('img/img2.jpg')";
+    })
+    </script>
+</body>
+</html>

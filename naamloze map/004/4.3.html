@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        No way!!1!
+    </title>
+    <style>
+        #slideholder {
+            height: 200px;
+            width: 200px;
+            border: 3px black solid;
+            border-radius: 50px;
+        
+        }
+        #slideholder2 {
+            height: 200px;
+            width: 200px;
+            border: 3px black solid;
+            border-radius: 50px;
+        
+        } #slideholder3 {
+            height: 200px;
+            width: 200px;
+            border: 3px black solid;
+            border-radius: 50px;
+        
+        }
+    </style>
+</head>
+
+<body>
+    <div align="center">
+        
+        <div id="slideholder"></div>
+        <div id="slideholder2"></div>
+        <div id="slideholder3"></div>
+    </div>  
+
+    <script>
+    var plaatjes = [1, 2, ,3 ,4 ,5 ,6 ,7 ,8 ,9 ];
+    var teller = 1;
+    var slideholder = document.getElementById("slideholder");
+    slideholder.style.backgroundImage = "url('img/img1.jpg')";
+
+    slideholder.addEventListener("click", function() {
+        slideholder.style.backgroundImage = "url('img/img" + getImg() + ".jpg')";
+    });
+
+    function getImg() {
+        if(teller >= 9) {
+            teller = 1;
+        } else {
+            teller ++;
+        }
+        console.log(teller);
+        return teller;
+    }
+
+
+
+
+    var plaatjes2 = [1, 2, ,3 ,4 ,5 ,6 ,7 ,8 ,9 ];
+    var teller2 = 1;
+    var slideholder2 = document.getElementById("slideholder2");
+    slideholder2.style.backgroundImage = "url('img2/img1.jpg')";
+
+    slideholder2.addEventListener("click", function() {
+        slideholder2.style.backgroundImage = "url('img2/img" + getImg2() + ".jpg')";
+    });
+
+    function getImg2() {
+        if(teller2 >= 9) {
+            teller2 = 1;
+        } else {
+            teller2 ++;
+        }
+        console.log(teller2);
+        return teller2;
+    }
+
+    var plaatjes3 = [1, 2, ,3 ,4 ,5 ,6 ,7 ,8 ,9 ];
+    var teller3 = 1;
+    var slideholder3 = document.getElementById("slideholder3");
+    slideholder3.style.backgroundImage = "url('img3/img1.jpg')";
+
+    slideholder3.addEventListener("click", function() {
+        slideholder3.style.backgroundImage = "url('img3/img" + getImg3() + ".jpg')";
+    });
+
+    function getImg3() {
+        if(teller3 >= 9) {
+            teller3 = 1;
+        } else {
+            teller3 ++;
+        }
+        console.log(teller3);
+        return teller3;
+    }
+
+    </script>
+</body>
+</html>
