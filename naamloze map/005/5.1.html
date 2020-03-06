@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        No way!!1!
+    </title>
+    <style>
+
+        img {
+            height: 300px;
+            width: 300px;
+        }
+        body {
+            text-align: center;
+        }
+        div.picture-holder {
+            box-sizing: border-box;
+            height: 450px;
+            width: 300px;
+            float:left;
+           
+            border: solid 1px aquamarine;
+            
+        }
+        div.favorite {
+            width: 300px;
+            height: 150px;
+            
+            background-image: url("img/joe.jpg");
+            
+        }
+
+        #pics{
+            height: 1350px;
+            width: 900px;
+            border: 3px black solid;
+            font-size: 0px;;
+            margin: auto;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>GlooBar;</h1>
+    <div id="pics">
+       
+    </div>  
+    
+    
+    <script>
+        pics = document.getElementById("pics")
+        createPicsHolders();
+        createImages();
+
+        function createPicsHolders() {
+        for(var i = 0; i < 9; i++) {
+            pictureHolder= document.createElement("div");
+            pictureHolder.className = "picture-holder";
+            pictureHolder.id = "picture-holder-" + i;
+            pics.appendChild(pictureHolder);
+            }
+        }
+
+        function createImages() {
+            pictureHolders = document.getElementsByClassName("picture-holder");
+            for(var i = 0; i <pictureHolders.length; i++) {
+                favorite = document.createElement("div");
+                favorite.className = "favorite";
+                favorite.id = "favorite_" + (i+1);
+                plaatje = document.createElement("img");
+                plaatje.src = "img/img" + (i+1) + ".jpg";
+                plaatje.id = (i+1);
+                plaatje.addEventListener("click", function() {
+                    makeFavorite(this.id);
+                });
+                pictureHolders[i].appendChild(favorite);
+                pictureHolders[i].appendChild(plaatje);
+
+            }
+        }
+        
+        function makeFavorite(id) {
+            notsofavorite = document.getElementsByClassName("favorite");
+
+            for(var i = 0; i < notsofavorite.length; i++) {
+                notsofavorite[i].style.backgroundImage = "url('img/joe.jpg')";
+            }
+
+            favorite = document.getElementById("favorite_" + id) ;
+            favorite.style.backgroundImage = "url('img/thumbs.png'), url('img/joe.jpg')";
+        }
+    </script>
+</body> 
+</html>
